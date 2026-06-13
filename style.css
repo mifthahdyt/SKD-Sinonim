@@ -1,0 +1,57 @@
+/* General View Transition */
+.view-section {
+    display: none;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.view-section.active {
+    display: flex;
+}
+
+#dashboard.active, #quiz.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Flashcard 3D CSS */
+.fc-container {
+    perspective: 1000px;
+}
+
+.fc-card {
+    transform-style: preserve-3d;
+}
+
+.fc-card.flipped {
+    transform: rotateY(180deg);
+}
+
+.fc-front, .fc-back {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.fc-back {
+    transform: rotateY(180deg);
+}
+
+/* Custom Radio Button Styling for Quiz */
+.quiz-option {
+    transition: all 0.2s ease;
+}
+.quiz-option:hover {
+    transform: translateX(5px);
+    border-color: #6366f1; /* Indigo 500 */
+}
+.quiz-option.correct {
+    background-color: #064e3b; /* Emerald 900 */
+    border-color: #10b981; /* Emerald 500 */
+}
+.quiz-option.wrong {
+    background-color: #7f1d1d; /* Red 900 */
+    border-color: #ef4444; /* Red 500 */
+}
